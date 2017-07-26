@@ -25,10 +25,6 @@ def lattice_paths(a)
       a[row][col] = (a[row][col-1] + a[row-1][col])
     end
   end
-  puts a[1][5]
-  puts a[2][2]
-  puts a[3][3]
-  puts a[5][5]
   puts a[19][19]
 end
 
