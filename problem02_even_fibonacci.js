@@ -11,7 +11,7 @@ var fibonacci = function(){
     fibAr.push(fibAr[fibAr.length-1] + fibAr[fibAr.length-2]);
   }
   for (i = 1; i < fibAr.length-1; i++) {
-    if (fibAr[i] % 2 === 0) {
+    if (fibAr[i] % 2 == 0) {
       ttlSum += fibAr[i];
     }
   }
