@@ -130,13 +130,4 @@ def hundreds(num)
   return "#{one_digit(num)} hundred"
 end
 
-# num_in_words(303)
-# num_in_words(212)
-# num_in_words(437)
-# num_in_words(12)
-# num_in_words(6)
-# num_in_words(999)
-# num_in_words(44)
-# numbr = num_in_words(115)
-# letter_counts(1000)
 all_counts
