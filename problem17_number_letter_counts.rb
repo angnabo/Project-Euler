@@ -146,4 +146,8 @@ def hundreds(num)
   "#{one_digit(num)} hundred"
 end
 
+<<<<<<< HEAD
 puts all_counts
+=======
+all_counts
+>>>>>>> 63abe4b8c1c6afe4178f28559e89b8fac2ef0caa
