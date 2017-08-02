@@ -15,8 +15,7 @@
 #
 # What is the value of the first triangle number to have over five hundred divisors?
 
-def triangilar_nums
-  n = 0
+def triangular_nums
   (1..100000000).each do |i|
     n = factors(i*(i+1)/2)
     if  n.length >= 500
@@ -33,7 +32,7 @@ def factors(n)
       factors << n/i
     end
   end
-  return factors
+  factors
 end
 
-puts triangilar_nums
+puts triangular_nums

@@ -9,13 +9,13 @@
 # Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
 def sum_square_diff
-  sum_square = 0;
-  square_sum = 0;
+  sum_square = 0
+  square_sum = 0
   for i in 1..100
-    sum_square += i ** 2;
-    square_sum += i;
+    sum_square += i ** 2
+    square_sum += i
   end
-  return (square_sum ** 2) - sum_square;
+  (square_sum ** 2) - sum_square
 end
 
-puts "difference: #{sum_square_diff}";
+puts "difference: #{sum_square_diff}"

@@ -28,57 +28,50 @@
 def vertical(a)
   p = 0
   (0..a.length-4).each do |i|
-    subarray = a[i]
     (0..a.length-1).each do |j|
-      #puts "#{i}: #{j}, #{i+1}: #{j}, #{i+2}: #{j}, #{i+3}: #{j}"
       if a[i][j] * a[i+1][j] * a[i+2][j] * a[i+3][j] > p
         p = (a[i][j] * a[i+1][j] * a[i+2][j] * a[i+3][j])
       end
     end
   end
-  return p
+  p
 end
 
 def horizontal(a)
   p = 0
   (0..a.length-1).each do |i|
-    subarray = a[i]
     (0..a.length-4).each do |j|
-      #puts "#{i}: #{j}, #{i}: #{j+1}, #{i}: #{j+2}, #{i}: #{j+3}"
       if a[i][j] + a[i][j+1] * a[i][j+2] * a[i][j+3]  > p
         p = (a[i][j] * a[i][j+1] * a[i][j+2] * a[i][j+3])
 
       end
     end
   end
-  return p
+  p
 end
 
 def diagonal(a)
   p = 0
   (0..a.length-4).each do |i|
-    subarray = a[i]
     (0..a.length-4).each do |j|
-      #puts "#{i}: #{j}, #{i+1}: #{j+1}, #{i+2}: #{j+2}, #{i+3}: #{j+3}"
       if a[i][j] * a[i+1][j+1] * a[i+2][j+2] * a[i+3][j+3] > p
         p = (a[i][j] * a[i+1][j+1] * a[i+2][j+2] * a[i+3][j+3])
       end
     end
   end
-  return p
+  p
 end
 
 def reverse_diagonal(a)
   p = 0
   (0..a.length-4).each do |i|
     19.downto(3) do |j|
-      #puts "#{i}: #{j}, #{i+1}: #{j-1}, #{i+2}: #{j-2}, #{i+3}: #{j+3}"
       if a[i][j] * a[i+1][j-1] * a[i+2][j-2] * a[i+3][j-3] > p
         p = (a[i][j] * a[i+1][j-1] * a[i+2][j-2] * a[i+3][j-3])
       end
     end
   end
-  return p
+  p
 end
 
 
@@ -103,7 +96,9 @@ a = [ [8, 2, 22, 97, 38, 15, 0, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 
       [20, 73, 35, 29, 78, 31, 90, 01, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 05, 54],
       [01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48] ]
 
-vertical(a)
-horizontal(a)
-diagonal(a)
-reverse_diagonal(a)
+
+puts "vertical: #{vertical(a)}"
+puts "horizontal: #{horizontal(a)}"
+puts "diagonal: #{diagonal(a)}"
+puts "reverse-diagonal: #{reverse_diagonal(a)}"
+

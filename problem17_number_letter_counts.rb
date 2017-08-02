@@ -1,21 +1,31 @@
+# If the numbers 1 to 5 are written out in words:
+# one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+#
+# If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+#
+#
+# NOTE: Do not count spaces or hyphens.
+# For example, 342 (three hundred and forty-two) contains 23 letters,
+# 115 (one hundred and fifteen) contains 20 letters.
+# The use of "and" when writing out numbers is in compliance with British usage.
+
 @count = 0
 def all_counts
   (1..1000).each do |i|
     letter_counts(i)
   end
-  puts @count
+  @count
 end
 
 def letter_counts(n)
   num = num_in_words(n)
   num.split('')
-  puts num
   (0..num.length-1).each do |i|
-    if !(num[i] == " " || num[i] == "-")
+    unless num[i] == ' ' || num[i] == '-'
       @count += 1
     end
   end
-  puts @count
+  @count
 end
 
 def num_in_words(num)
@@ -23,7 +33,7 @@ def num_in_words(num)
   n.map!(&:to_i)
 
   if n.length == 4
-    return "one thousand"
+    return 'one thousand'
   end
 
   if n.length == 3
@@ -51,92 +61,89 @@ def num_in_words(num)
   end
 
   if n.length == 1
-    return "#{one_digit(n[0])}"
+    "#{one_digit(n[0])}"
   end
 end
 
 def one_digit(num)
   case num
   when 0
-    return " "
+    return ' '
   when 1
-    return "one"
+    return 'one'
   when 2
-    return "two"
+    return 'two'
   when 3
-    return "three"
+    return 'three'
   when 4
-    return "four"
+    return 'four'
   when 5
-    return "five"
+    return 'five'
   when 6
-    return "six"
+    return 'six'
   when 7
-    return "seven"
+    return 'seven'
   when 8
-    return "eight"
+    return 'eight'
   when 9
-    return "nine"
+    return 'nine'
+    else
+      return 'unknown'
   end
 end
 
 def ten_to_twenty(num)
   case num
   when 0
-    return "ten"
+    return 'ten'
   when 1
-    return "eleven"
+    return 'eleven'
   when 2
-    return "twelve"
+    return 'twelve'
   when 3
-    return "thirteen"
+    return 'thirteen'
   when 4
-    return "fourteen"
+    return 'fourteen'
   when 5
-    return "fifteen"
+    return 'fifteen'
   when 6
-    return "sixteen"
+    return 'sixteen'
   when 7
-    return "seventeen"
+    return 'seventeen'
   when 8
-    return "eighteen"
+    return 'eighteen'
   when 9
-    return "nineteen"
+    return 'nineteen'
+    else
+      return 'unknown'
   end
 end
 
 def tens(num)
   case num
   when 2
-    return "twenty-"
+    return 'twenty-'
   when 3
-    return "thirty-"
+    return 'thirty-'
   when 4
-    return "forty-"
+    return 'forty-'
   when 5
-    return "fifty-"
+    return 'fifty-'
   when 6
-    return "sixty-"
+    return 'sixty-'
   when 7
-    return "seventy-"
+    return 'seventy-'
   when 8
-    return "eighty-"
+    return 'eighty-'
   when 9
-    return "ninety-"
+    return 'ninety-'
+    else
+      return 'unknown'
   end
 end
 
 def hundreds(num)
-  return "#{one_digit(num)} hundred"
+  "#{one_digit(num)} hundred"
 end
 
-# num_in_words(303)
-# num_in_words(212)
-# num_in_words(437)
-# num_in_words(12)
-# num_in_words(6)
-# num_in_words(999)
-# num_in_words(44)
-# numbr = num_in_words(115)
-# letter_counts(1000)
-all_counts
+puts all_counts

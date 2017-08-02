@@ -1,12 +1,5 @@
-
-
-
-#
-#
-#
-# puts 37107287533902102798797998220837590246510135740250.round(-40)
-
-a = [37107287533902102798797998220837590246510135740250,
+#Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+big_num_array = [37107287533902102798797998220837590246510135740250,
 46376937677490009712648124896970078050417018260538,
 74324986199524741059474233309513058123726617309629,
 91942213363574161572522430563301811072406154908250,
@@ -109,31 +102,31 @@ a = [37107287533902102798797998220837590246510135740250,
 
 def crop(n)
   num = n.to_s.chars.map(&:to_i)
-  x = []
+  number_crop_array = []
   (0..num.length-40).each do |i|
-    x << num[i]
+    number_crop_array << num[i]
   end
-  return x.join.to_i
+  number_crop_array.join.to_i
 end
 
-def round_and_crop(a)
-  (0..a.length-1).each do |i|
-    a[i] = a[i].round(-40)
-    a[i] = crop(a[i])
-    puts a[i]
+def round_and_crop(array)
+  (0..array.length-1).each do |i|
+    array[i] = array[i].round(-40)
+    array[i] = crop(array[i])
+    puts array[i]
   end
-  return a
+  array
 end
 
-cropped_a = round_and_crop(a)
+cropped_array = round_and_crop(big_num_array)
 
-def sum(a)
+def sum(array)
   n = 0
-  (0..a.length-1).each do |i|
-    n += a[i]
+  (0..array.length-1).each do |i|
+    n += array[i]
   end
-  return n.to_s.first(10).to_i
+  n.to_s.first(10).to_i
 end
 
 
-puts sum(cropped_a)
+puts sum(cropped_array)

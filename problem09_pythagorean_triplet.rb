@@ -6,7 +6,7 @@
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # Find the product abc.
 
-def pythagorian_triplet(sum)
+def pythagorean_triplet(sum)
 
   (1..(sum/3)).each do |a|
     (1..(sum/2)).each do |b|
@@ -18,4 +18,4 @@ def pythagorian_triplet(sum)
   end
 end
 
-pythagorian_triplet(1000)
+puts pythagorean_triplet(1000)
