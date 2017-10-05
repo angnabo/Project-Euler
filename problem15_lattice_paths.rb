@@ -29,11 +29,11 @@ def lattice_paths(array)
       array[row][col] = (array[row][col-1] + array[row-1][col])
     end
   end
-<<<<<<< HEAD
+
   puts array[20][20]
-=======
+
   puts a[19][19]
->>>>>>> 63abe4b8c1c6afe4178f28559e89b8fac2ef0caa
+
 end
 
 def horizontal()
