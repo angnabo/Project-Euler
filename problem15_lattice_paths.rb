@@ -29,18 +29,10 @@ def lattice_paths(array)
       array[row][col] = (array[row][col-1] + array[row-1][col])
     end
   end
-
   puts array[20][20]
-
   puts a[19][19]
-
 end
 
-def horizontal()
-end
-
-def vertical()
-end
 
 
 lattice_paths(a)
